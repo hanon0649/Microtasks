@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microtasks = @user.microtasks.order('created_at DESC').page(params[:page])
+    # @microtasks = Microtask.order('created_at DESC').page(params[:page])
     counts @user
   end
 

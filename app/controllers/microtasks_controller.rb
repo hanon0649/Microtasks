@@ -8,7 +8,7 @@ class MicrotasksController < ApplicationController
       flash[:success] = 'タスクを投稿しました。'
       redirect_to root_url
     else
-      @microtasks = current_user.microtasks.order('created_at DESC').page(params[:page])
+      @microtasks = current_user.feed_microtasks.order('created_at DESC').page(params[:page])
       flash.now[:danger] = 'タスクの投稿に失敗しました。'
       render 'toppages/index'
     end
