@@ -65,6 +65,10 @@ class User < ApplicationRecord
     self.favoritings.include?(microtask)
   end
   
+  def feed_favorites
+    Microtask.where(user_id: self.favoriting_ids)
+  end
+  
   #===add_end===
 
 end

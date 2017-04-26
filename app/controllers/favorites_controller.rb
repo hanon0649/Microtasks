@@ -1,9 +1,9 @@
 class FavoritesController < ApplicationController
   before_action :require_user_logged_in
   
-  # def index
-  #   @favorites = Favorite.all.page(params[:page])
-  # end
+  def index
+    @favorites = Favorite.all.page(params[:page])
+  end
 
   def create
     microtask = Microtask.find(params[:microtask_id])
