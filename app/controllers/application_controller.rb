@@ -15,6 +15,12 @@ class ApplicationController < ActionController::Base
     @count_microtasks = user.microtasks.count
     @count_followings = user.followings.count
     @count_followers = user.followers.count
+    
+    #===add_start===
+    
+    #@count_favoritings = user.favoritings.count
+    
+    #===add_end===
   end
   
   

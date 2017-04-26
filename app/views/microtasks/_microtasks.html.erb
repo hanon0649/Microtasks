@@ -12,10 +12,17 @@
         <div>
           <p><%= microtask.content %></p>
         </div>
+   
         <div>
           <% if current_user == microtask.user %>
             <%= link_to "Delete", microtask, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
           <% end %>
+          
+          <!--#===add_start===-->
+          
+          <%= render 'favorites/favorite_button', user: @user,microtask: microtask %>
+          
+          <!--#===add_end===-->
         </div>
       </div>
     </li>

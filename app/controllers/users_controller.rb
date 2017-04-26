@@ -40,8 +40,15 @@ class UsersController < ApplicationController
     counts(@user)
   end
   
+  #===add_start===
   
+  def favoritings
+    @user = User.find(params[:id])  ##このidがちょっと意味わからない
+    @favoritings = @user.favoritings.page(params[:page])
+    # counts(@user) ##カウントしなくていいや
+  end
   
+  #===add_end===
   
   
   private
